@@ -4,6 +4,8 @@ creator: William Wold
 overview: William's Basic Battle is a 2D multiplayer game designed to run on chipmunk basic
 note: use 'BasicBattle.bas'. if you get display errors then switch to BasicBattle(SimpChar).bas.
 
+__These files were modified in June 2014, but may have been originally written a year or two before that__
+
 ## instructions:
 1. open the program in chipmunk basic
 2. type in your start x any y location with each number followed by enter
