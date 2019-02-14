@@ -1,5 +1,5 @@
 10 rem 0Tn./Z)]_;zi}m={2jeQ%JMUB[5x`Au@k$Ñ\?I9|<a(Ht>EWÅ1,~3glGq&!Kbf'Xd+cL^yVYSC4vÉ*Ç:ÄhO#F6woNsrD"8-P7Rp
-20 filename$ = "BasicBattle.bas"
+20 filename$ = "basic-battle-ascii.bas"
 30 typspd=30
 40 debug = 0
 45 dirnums = 1
@@ -13,7 +13,7 @@
 120 print chr$(32)chr$(8);
 130 if timer = tme then 110
 140 tnth = int((tnth+0.5)/typspd)
-150 ttl$ = "Williams basic battle 2.4"
+150 ttl$ = "Williams basic battle 2.4 simple charicter version"
 160 typ$ = ttl$
 170 cls
 180 goto 280
@@ -34,7 +34,7 @@
 330 dim arna(11,11)
 340 dim rndm(100)
 350 print
-360 print "the following error may be due to to file name of the program being changed. rename the program to 'BasicBattle.bas' or change the second line of the program to the current file name (make sure to include the file exstension)."
+360 print "the following error may be due to to file name of the program being changed. rename the program to 'basic-battle-ascii.bas' or change the second line of the program to the current file name (make sure to include the file exstension)."
 370 open filename$ for input as #0
 380 cls
 390 print ttl$
@@ -82,7 +82,6 @@
 800 print
 810 if debug = 0 then cls
 820 print "1 2 3 4 5 6 7 8 9 10"
-830 print chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(194)chr$(196)chr$(191)
 840 for i = 1 to 10
 850 for j = 1 to 10
 860 pxl$ = " "
@@ -94,29 +93,28 @@
 920 if dirnums=1 and p1x = j+1 and p1y = i+1 then pxl$ = "7" ' movement directer
 930 if dirnums=1 and p1x = j and p1y = i+1 then pxl$ = "8" ' movement directer
 940 if dirnums=1 and p1x = j-1 and p1y = i+1 then pxl$ = "9" ' movement directer
-960 if arna(i-1,j+1) = 2 then pxl$ = chr$(192)' senser corner
-970 if arna(i+1,j+1) = 2 then pxl$ = chr$(218)' senser corner
-980 if arna(i-1,j-1) = 2 then pxl$ = chr$(217)' senser corner
-990 if arna(i+1,j-1) = 2 then pxl$ = chr$(191)' senser corner
+960 if arna(i-1,j+1) = 2 then pxl$ = "\"' senser corner
+970 if arna(i+1,j+1) = 2 then pxl$ = "/"' senser corner
+980 if arna(i-1,j-1) = 2 then pxl$ = "/"' senser corner
+990 if arna(i+1,j-1) = 2 then pxl$ = "\"' senser corner
 1000 if arna(i,j) = 2 then pxl$ = "+" ' deactivated senser
-1005 if arna(i,j) = 1 then pxl$ = chr$(15)' bomb
-1010 if arna(i,j) = 2 and i+1 = p2y and j+1 = p2x then pxl$ = chr$(219)' senser checker
-1020 if arna(i,j) = 2 and i-1 = p2y and j+1 = p2x then pxl$ = chr$(219)' senser checker
-1030 if arna(i,j) = 2 and i+1 = p2y and j-1 = p2x then pxl$ = chr$(219)' senser checker
-1040 if arna(i,j) = 2 and i-1 = p2y and j-1 = p2x then pxl$ = chr$(219)' senser checker
-1050 if arna(i,j) = 2 and i = p2y and j+1 = p2x then pxl$ = chr$(219)' senser checker
-1060 if arna(i,j) = 2 and i = p2y and j-1 = p2x then pxl$ = chr$(219)' senser checker
-1070 if arna(i,j) = 2 and i+1 = p2y and j = p2x then pxl$ = chr$(219)' senser checker
-1080 if arna(i,j) = 2 and i-1 = p2y and j = p2x then pxl$ = chr$(219)' senser checker
-1090 if arna(i,j) = 2 and i = p2y and j = p2x then pxl$ = chr$(219)' senser checker
-1100 if p1x = j and p1y = i then pxl$ = chr$(2)' player
-1110 if p2x = j and p2y = i and debug = 1 then pxl$ = chr$(1)' player 2 (debug only)
+1005 if arna(i,j) = 1 then pxl$ = "*"' bomb
+1010 if arna(i,j) = 2 and i+1 = p2y and j+1 = p2x then pxl$ = "#"' senser checker
+1020 if arna(i,j) = 2 and i-1 = p2y and j+1 = p2x then pxl$ = "#"' senser checker
+1030 if arna(i,j) = 2 and i+1 = p2y and j-1 = p2x then pxl$ = "#"' senser checker
+1040 if arna(i,j) = 2 and i-1 = p2y and j-1 = p2x then pxl$ = "#"' senser checker
+1050 if arna(i,j) = 2 and i = p2y and j+1 = p2x then pxl$ = "#"' senser checker
+1060 if arna(i,j) = 2 and i = p2y and j-1 = p2x then pxl$ = "#"' senser checker
+1070 if arna(i,j) = 2 and i+1 = p2y and j = p2x then pxl$ = "#"' senser checker
+1080 if arna(i,j) = 2 and i-1 = p2y and j = p2x then pxl$ = "#"' senser checker
+1090 if arna(i,j) = 2 and i = p2y and j = p2x then pxl$ = "#"' senser checker
+1100 if p1x = j and p1y = i then pxl$ = "@"' player
+1110 if p2x = j and p2y = i and debug = 1 then pxl$ = "o"' player 2 (debug only)
 1120 print pxl$;
-1130 print chr$(179);
+1130 print " ";
 1140 next j
 1150 print i
-1160 print chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(197)chr$(196)chr$(180)
-1170 if i = 10 then print chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(193)chr$(196)chr$(217)
+1160 print "          "
 1180 next i
 1190 print
 1200 return
